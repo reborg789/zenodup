@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="metadata"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="metadata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="upload_type"/>
+        <xs:element ref="publication_type"/>
+        <xs:element ref="publication_date"/>
+        <xs:element ref="title"/>
+        <xs:element ref="creators"/>
+        <xs:element ref="description"/>
+        <xs:element ref="access_right"/>
+        <xs:element ref="license"/>
+        <xs:element ref="doi"/>
+        <xs:element ref="keywords"/>
+        <xs:element ref="contributors"/>
+        <xs:element ref="conference_title"/>
+        <xs:element ref="conference_acronym"/>
+        <xs:element ref="conference_dates"/>
+        <xs:element ref="conference_place"/>
+        <xs:element ref="conference_url"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="upload_type" type="xs:NCName"/>
+  <xs:element name="publication_type" type="xs:NCName"/>
+  <xs:element name="publication_date" type="xs:date"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="creators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="creator"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="creator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="affiliation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="access_right" type="xs:NCName"/>
+  <xs:element name="license" type="xs:NCName"/>
+  <xs:element name="doi">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="keywords" type="xs:string"/>
+  <xs:element name="contributors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="contributor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contributor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="affiliation"/>
+        <xs:element ref="type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="conference_title" type="xs:string"/>
+  <xs:element name="conference_acronym" type="xs:string"/>
+  <xs:element name="conference_dates" type="xs:string"/>
+  <xs:element name="conference_place" type="xs:NCName"/>
+  <xs:element name="conference_url" type="xs:anyURI"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="affiliation" type="xs:string"/>
+</xs:schema>
